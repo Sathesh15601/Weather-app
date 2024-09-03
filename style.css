@@ -17,7 +17,7 @@ body{
 .container{
     position: relative;
     width: 400px;
-    height: 100px;
+    height: 500px;
     background:rgba(255, 255, 255, .1);
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, .1);
@@ -88,17 +88,20 @@ body{
 
 .weather-box.active,
 .weather-details.active,
-.not-found.active{
+.not-found.active,
+.static{
     visibility: visible;
 }
 
 .weather-box .box,
-.not-found.box{
+.not-found.box,
+.static.box{
     transform: translateY(-100%);
 }
 
 .weather-box.active .box,
-.not-found.active .box{
+.not-found.active .box,
+.static.box{
     transform: translateY(0%);
     transition: transform 1s ease;
     transition-delay: .6s;
@@ -108,7 +111,8 @@ body{
 }
 .container.active .weather-box .box .info-weather,
 .container.active .weather-details .humidity .info-humidity,
-.container.active .weather-details .wind .info-wind{
+.container.active .weather-details .wind .info-wind,
+.container.active.static.box{
     transform: translateY(0%);
     transition: transform 1s ease;
 }
@@ -243,4 +247,27 @@ body{
 .active-clone#clone-info-wind span{
     transform:translateY(0%);
 
+}
+
+#static{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin-top:110px
+
+
+}
+#static > img{
+    width: 65%;
+}
+.bg{
+    background-color: red;
+}
+
+#static > h2{
+    font-size: 22px;
+    font-weight: 500;
+    margin-top:-20px;
 }

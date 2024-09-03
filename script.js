@@ -4,11 +4,22 @@ const weatherBox =document.querySelector(".weather-box");
 const weatherDetails =document.querySelector(".weather-details");
 const error404 =document.querySelector(".not-found");
 const cityHide =document.querySelector(".city-hide");
+const static=document.getElementById("static")
+
+
+
+
+
+
 
 search.addEventListener('click',()=>{
+    static.style.display="none"
+    
 
     const APIKey ='a557f20a488c5869b6cf6fd2c38272c3';
-    const city =document.querySelector('.search-box input').value;
+    const city = document.querySelector('.search-box input').value;
+ 
+  
 
     if(city == '')
         return;
